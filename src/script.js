@@ -1,6 +1,10 @@
 const openAddBtn = document.querySelector(".add-btn");
 const addContainer = document.querySelector(".add");
 const confirmAdd = document.querySelector(".confirm-btn");
+const sortBtn = document.querySelector(".sort-btn");
+const sortOptions = document.querySelector(".sort-options");
+const sortDate = document.querySelector(".sort-date");
+const sortDuration = document.querySelector(".sort-duration");
 const addInput = document.querySelector("#add-input");
 const addSettings = document.querySelector(".add-settings");
 const dueDateLabel = document.querySelector(".add-settings label");
@@ -14,6 +18,11 @@ let lastAddedTodo = {
   timeStamp: "",
   text: ""
 };
+
+sortBtn.addEventListener("click", function(e) {
+  e.preventDefault();
+  sortOptions.classList.toggle("show");
+});
 
 // open add item input promp
 openAddBtn.addEventListener("click", function(e) {
@@ -52,6 +61,27 @@ window.addEventListener("click", function(e) {
     todosOverlay.classList.remove("show");
     openAddBtn.classList.remove("hide");
   }
+
+  if (
+    e.target !== sortBtn &&
+    e.target !== sortDate &&
+    e.target !== sortDuration
+  ) {
+    sortOptions.classList.remove("show");
+  }
+});
+
+sortDate.addEventListener("click", function(e) {
+  // do action
+  sortOptions.classList.remove("show");
+  this.classList.add("active");
+  sortDuration.classList.remove("active");
+});
+
+sortDuration.addEventListener("click", function(e) {
+  sortOptions.classList.remove("show");
+  this.classList.add("active");
+  sortDate.classList.remove("active");
 });
 
 addInput.addEventListener("keydown", function(e) {
@@ -110,17 +140,3 @@ function makeTodoEl() {
 
   return todo;
 }
-
-//////////////////////////////////////////////////////////////////////////
-
-const whatWorksBtn = document.querySelector(".what-works");
-
-whatWorksBtn.addEventListener("click", function(e) {
-  this.classList.add("hide");
-  document.querySelector("#things-that-work").classList.add("show");
-});
-
-document.querySelector(".close").addEventListener("click", function(e) {
-  whatWorksBtn.classList.remove("hide");
-  document.querySelector("#things-that-work").classList.remove("show");
-});

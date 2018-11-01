@@ -64,6 +64,39 @@
 
     @import "./todo.less";
 
+    .sort-options {
+      position: absolute;
+      right: 0;
+      top: -6rem;
+      z-index: 1;
+      font-size: 1rem;
+      background: @white;
+      border: 1px solid @blue;
+      border-right: none;
+      border-top: none;
+      color: @blue;
+      transition: all 0.15s ease-in;
+
+      &.show {
+        top: 0;
+      }
+
+      p {
+        padding: 0.35rem;
+        cursor: pointer;
+        border-bottom: 0.5px solid fade(@grey, 90%);
+
+        &.active {
+          color: @white;
+          background: @blue;
+        }
+
+        &:last-of-type {
+          border-bottom: none;
+        }
+      }
+    }
+
     .overlay {
       position: absolute;
       top: 0;

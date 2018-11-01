@@ -3,6 +3,8 @@ const addContainer = document.querySelector(".add");
 const confirmAdd = document.querySelector(".controls-confirm");
 const addInput = document.querySelector("#add-input");
 const addSettings = document.querySelector(".add-settings");
+const dueDateLabel = document.querySelector(".add-settings label");
+const dueDatePicker = document.querySelector(".add-settings input#due-date");
 const todosOverlay = document.querySelector(".todos .overlay");
 const messageModal = document.querySelector("#messageModal");
 const todoContainer = document.querySelector(".todos");
@@ -39,7 +41,9 @@ window.addEventListener("click", function(e) {
   e.preventDefault();
   if (
     e.target !== addInput &&
-    e.target !== addSettings && // not working
+    e.target !== addSettings &&
+    e.target !== dueDateLabel &&
+    e.target !== dueDatePicker &&
     e.target !== openAddBtn &&
     e.target !== confirmAdd
   ) {

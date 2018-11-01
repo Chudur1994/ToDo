@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: sans-serif;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -36,7 +40,7 @@
   font-size: 1.3rem;
   text-align: center;
   z-index: 99;
-  color: white;
+  color: @white;
   transition: all 0.15s ease-in;
 
   &.show {

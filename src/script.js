@@ -2,6 +2,7 @@ const openAddBtn = document.querySelector(".controls-add");
 const addContainer = document.querySelector(".add");
 const confirmAdd = document.querySelector(".controls-confirm");
 const addInput = document.querySelector("#add-input");
+const addSettings = document.querySelector(".add-settings");
 const messageModal = document.querySelector("#messageModal");
 const todoContainer = document.querySelector(".todos");
 const todos = document.querySelectorAll(".todo");
@@ -36,6 +37,7 @@ window.addEventListener("click", function(e) {
   e.preventDefault();
   if (
     e.target !== addInput &&
+    e.target !== addSettings && // not working
     e.target !== openAddBtn &&
     e.target !== confirmAdd
   ) {

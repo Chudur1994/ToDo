@@ -1,23 +1,24 @@
 .btn {
   padding: 0.1rem 0.4rem;
-  border-radius: 2px;
-  background-color: #fff;
-  color: #f5811f;
+  background-color: #fafafa;
+  box-shadow: 0.5px 0.5px 3px 0px rgba(0, 0, 0, 0.75);
+  color: #f93b4b;
   cursor: pointer;
 }
 .header {
   display: flex;
   width: 100%;
-  background-color: #f5811f;
+  background-color: #f93b4b;
   align-items: center;
   justify-content: space-between;
   font-size: 1.2rem;
   position: relative;
   padding: 0.5rem;
+  height: 3rem;
   overflow: hidden;
 }
 .header-text {
-  color: white;
+  color: #fafafa;
 }
 .header .controls {
   display: flex;
@@ -44,8 +45,7 @@
   top: -3rem;
   right: 0.5rem;
   transition: all 0.15s ease-in;
-  color: #43c6ac;
-  border: 1px solid #43c6ac;
+  color: #3bb8f9;
 }
 .header .controls-confirm:hover i {
   bottom: 0.1rem;
@@ -57,13 +57,13 @@
   transition: all 0.15s ease-in;
 }
 .header .controls-confirm.show {
-  top: 0.5rem;
+  top: 0.7rem;
 }
 .todo {
   display: flex;
   padding: 0.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 0.5px solid #999999;
+  border-bottom: 0.5px solid #475760;
   position: relative;
   transition: all 0.15s ease-in;
 }
@@ -77,9 +77,11 @@
   position: absolute;
   right: 0;
   bottom: 0;
-  background-color: #f5811f;
-  color: white;
+  background-color: #f93b4b;
+  color: #fafafa;
   padding: 0.05rem;
+  box-shadow: 0.5px 0.5px 3px 0px rgba(0, 0, 0, 0.75);
+  margin-bottom: 0.25rem;
 }
 .todo-container {
   flex: 1;
@@ -94,31 +96,44 @@
 .todo-container .add {
   transition: all 0.15s ease-in;
   width: 100%;
-  position: relative;
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  z-index: 99;
+  overflow: hidden;
+  height: 0;
+  border-bottom: 2px solid #475760;
 }
 .todo-container .add #add-input {
-  position: absolute;
   transition: all 0.15s ease-in;
-  left: 0;
-  top: 0;
-  height: 0;
   font-size: 1.1rem;
   width: 100%;
-  z-index: 99;
   border: none;
-  border-right: 2px solid #f5811f;
-  border-left: 2px solid #f5811f;
-  border-bottom: 2px solid #f5811f;
+  padding: 0.5rem;
+  border-right: 2px solid #f93b4b;
+  border-left: 2px solid #f93b4b;
+  border-bottom: 2px solid #f93b4b;
 }
 .todo-container .add #add-input:focus {
   outline: none;
 }
-.todo-container .add.show #add-input {
-  height: 3rem;
+.todo-container .add > div {
+  display: flex;
+  color: #fafafa;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #f93b4b;
   padding: 0.5rem;
+}
+.todo-container .add > div label {
+  margin-right: 0.25rem;
+  text-decoration: underline;
+}
+.todo-container .add.show {
+  height: 5rem;
 }
 .todo-container .todos {
   flex: 1;
-  padding: 0.35rem;
+  padding: 1rem;
   overflow-y: auto;
 }

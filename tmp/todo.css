@@ -2,7 +2,7 @@
   display: flex;
   padding: 0.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 0.5px solid #999999;
+  border-bottom: 0.5px solid #475760;
   position: relative;
   transition: all 0.15s ease-in;
 }
@@ -16,7 +16,9 @@
   position: absolute;
   right: 0;
   bottom: 0;
-  background-color: #f5811f;
-  color: white;
+  background-color: #f93b4b;
+  color: #fafafa;
   padding: 0.05rem;
+  box-shadow: 0.5px 0.5px 3px 0px rgba(0, 0, 0, 0.75);
+  margin-bottom: 0.25rem;
 }

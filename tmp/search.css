@@ -24,7 +24,7 @@
 .search #search-input:focus {
   outline: none;
   box-shadow: 0px 1px 5px 0px #43c6ac;
-  border-bottom-color: white;
+  border-bottom-color: #fafafa;
 }
 .search #search-input:focus + i {
   color: #43c6ac;
@@ -33,5 +33,5 @@
   position: absolute;
   right: 1%;
   cursor: pointer;
-  color: #999999;
+  color: #475760;
 }

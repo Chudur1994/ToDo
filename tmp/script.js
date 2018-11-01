@@ -4,6 +4,7 @@ var openAddBtn = document.querySelector(".controls-add");
 var addContainer = document.querySelector(".add");
 var confirmAdd = document.querySelector(".controls-confirm");
 var addInput = document.querySelector("#add-input");
+var addSettings = document.querySelector(".add-settings");
 var messageModal = document.querySelector("#messageModal");
 var todoContainer = document.querySelector(".todos");
 var todos = document.querySelectorAll(".todo");
@@ -34,7 +35,8 @@ confirmAdd.addEventListener("click", function (e) {
 window.addEventListener("click", function (e) {
   e.preventDefault();
 
-  if (e.target !== addInput && e.target !== openAddBtn && e.target !== confirmAdd) {
+  if (e.target !== addInput && e.target !== addSettings && // not working
+  e.target !== openAddBtn && e.target !== confirmAdd) {
     addContainer.classList.remove("show");
     confirmAdd.classList.remove("show");
     openAddBtn.classList.remove("hide");

@@ -15,7 +15,8 @@ var lastAddedTodo = {
 openAddBtn.addEventListener("click", function (e) {
   e.preventDefault();
   addContainer.classList.add("show");
-  confirmAdd.classList.add("show"); // give focus to input
+  confirmAdd.classList.add("show");
+  this.classList.add("hide"); // give focus to input
 
   addInput.focus();
 }); // add the todo to list and close input prompt
@@ -36,6 +37,7 @@ window.addEventListener("click", function (e) {
   if (e.target !== addInput && e.target !== openAddBtn && e.target !== confirmAdd) {
     addContainer.classList.remove("show");
     confirmAdd.classList.remove("show");
+    openAddBtn.classList.remove("hide");
   }
 });
 addInput.addEventListener("keydown", function (e) {
@@ -55,6 +57,7 @@ function addTodo() {
   lastAddedTodo.timeStamp = new Date().toLocaleString();
   addContainer.classList.remove("show");
   confirmAdd.classList.remove("show");
+  openAddBtn.classList.remove("hide");
   todoContainer.appendChild(makeTodoEl());
 }
 
@@ -91,14 +94,8 @@ function makeTodoEl() {
   todo.appendChild(text);
   todo.appendChild(timeStamp);
   return todo;
-}
+} //////////////////////////////////////////////////////////////////////////
 
-{}
-/* <p class="todo-number">1.</p>
-<p class="todo-text">Lorem Lorem ipsum dolor sit amet. ipsum dolor, sit amet consectetur
-  adipisicing elit. Fugit, sit.</p>
-<p class="todo-timeStamp">Just now</p> */
-//////////////////////////////////////////////////////////////////////////
 
 var whatWorksBtn = document.querySelector(".what-works");
 whatWorksBtn.addEventListener("click", function (e) {

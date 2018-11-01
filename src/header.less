@@ -21,6 +21,9 @@
     flex-direction: column;
 
     &-add {
+      opacity: 1;
+      transition: all 0.15s ease-in;
+
       i {
         font-size: 1rem;
         position: relative;
@@ -30,6 +33,10 @@
 
       &:hover i {
         bottom: 0.1rem;
+      }
+
+      &.hide {
+        opacity: 0;
       }
     }
 

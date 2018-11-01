@@ -16,6 +16,7 @@ openAddBtn.addEventListener("click", function(e) {
   e.preventDefault();
   addContainer.classList.add("show");
   confirmAdd.classList.add("show");
+  this.classList.add("hide");
   // give focus to input
   addInput.focus();
 });
@@ -40,6 +41,7 @@ window.addEventListener("click", function(e) {
   ) {
     addContainer.classList.remove("show");
     confirmAdd.classList.remove("show");
+    openAddBtn.classList.remove("hide");
   }
 });
 
@@ -60,6 +62,7 @@ function addTodo() {
   lastAddedTodo.timeStamp = new Date().toLocaleString();
   addContainer.classList.remove("show");
   confirmAdd.classList.remove("show");
+  openAddBtn.classList.remove("hide");
   todoContainer.appendChild(makeTodoEl());
 }
 
@@ -101,13 +104,6 @@ function makeTodoEl() {
   todo.appendChild(timeStamp);
 
   return todo;
-}
-
-{
-  /* <p class="todo-number">1.</p>
-<p class="todo-text">Lorem Lorem ipsum dolor sit amet. ipsum dolor, sit amet consectetur
-    adipisicing elit. Fugit, sit.</p>
-<p class="todo-timeStamp">Just now</p> */
 }
 
 //////////////////////////////////////////////////////////////////////////

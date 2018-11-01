@@ -1,11 +1,25 @@
-.search {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.container .search {
   width: 50%;
   display: flex;
   align-items: center;
   margin: 3% 0;
   position: relative;
 }
-.search:before {
+.container .search:before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -13,7 +27,7 @@
   width: 100%;
   border-bottom: 2px solid #43c6ac;
 }
-.search #search-input {
+.container .search #search-input {
   width: 100%;
   padding: 0.7rem;
   font-size: 1.2rem;
@@ -21,21 +35,27 @@
   transition: all 0.25s ease-out;
   border: none;
 }
-.search #search-input:focus {
+.container .search #search-input:focus {
   outline: none;
   box-shadow: 0px 1px 5px 0px #43c6ac;
   border-bottom-color: #fafafa;
 }
-.search #search-input:focus + i {
+.container .search #search-input:focus + i {
   color: #43c6ac;
 }
-.search i {
+.container .search i {
   position: absolute;
   right: 1%;
   cursor: pointer;
   color: #475760;
 }
-.todo-container {
+.container .content {
+  width: 60%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.container .content .todo-container {
   flex: 1;
   position: relative;
   margin: 0 0.5rem;
@@ -45,7 +65,64 @@
   height: 60vh;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
 }
-.todo-container .add {
+.container .content .todo-container .header {
+  display: flex;
+  width: 100%;
+  background-color: #f93b4b;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  position: relative;
+  padding: 0.5rem;
+  height: 3rem;
+  overflow: hidden;
+}
+.container .content .todo-container .header .controls {
+  display: flex;
+  flex-direction: column;
+}
+.container .content .todo-container .header .controls .add-btn {
+  opacity: 1;
+  transition: all 0.15s ease-in;
+}
+.container .content .todo-container .header .controls .add-btn i {
+  font-size: 1rem;
+  position: relative;
+  bottom: 0;
+  transition: all 0.15s ease-in;
+}
+.container .content .todo-container .header .controls .add-btn:hover i {
+  bottom: 0.1rem;
+}
+.container .content .todo-container .header .controls .add-btn.hide {
+  opacity: 0;
+}
+.container .content .todo-container .header .controls .confirm-btn {
+  position: absolute;
+  top: -3rem;
+  right: 0.5rem;
+  transition: all 0.15s ease-in;
+  color: #43c6ac;
+}
+.container .content .todo-container .header .controls .confirm-btn:hover i {
+  bottom: 0.1rem;
+}
+.container .content .todo-container .header .controls .confirm-btn i {
+  font-size: 0.9rem;
+  position: relative;
+  bottom: 0;
+  transition: all 0.15s ease-in;
+}
+.container .content .todo-container .header .controls .confirm-btn.show {
+  top: 0.7rem;
+}
+.container .content .todo-container .header-text {
+  color: #fafafa;
+}
+.container .content .todo-container .header-completed {
+  background-color: #43c6ac;
+}
+.container .content .todo-container .add {
   transition: all 0.15s ease-in;
   width: 100%;
   position: absolute;
@@ -55,7 +132,7 @@
   overflow: hidden;
   height: 0;
 }
-.todo-container .add #add-input {
+.container .content .todo-container .add #add-input {
   transition: all 0.15s ease-in;
   font-size: 1.1rem;
   width: 100%;
@@ -64,10 +141,10 @@
   border-right: 0.5rem solid #f93b4b;
   border-left: 0.5rem solid #f93b4b;
 }
-.todo-container .add #add-input:focus {
+.container .content .todo-container .add #add-input:focus {
   outline: none;
 }
-.todo-container .add > div {
+.container .content .todo-container .add > div {
   display: flex;
   color: #fafafa;
   align-items: center;
@@ -75,20 +152,44 @@
   background-color: #f93b4b;
   padding: 0.5rem;
 }
-.todo-container .add > div label {
+.container .content .todo-container .add > div label {
   margin-right: 0.25rem;
   text-decoration: underline;
 }
-.todo-container .add.show {
+.container .content .todo-container .add.show {
   height: 5rem;
 }
-.todo-container .todos {
+.container .content .todo-container .todos {
   flex: 1;
   padding: 1rem;
   overflow-y: auto;
   position: relative;
 }
-.todo-container .todos .overlay {
+.container .content .todo-container .todos .todo {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  position: relative;
+  transition: all 0.15s ease-in;
+  box-shadow: 0.5px 0.5px 3px 0px rgba(0, 0, 0, 0.75);
+  border-bottom: 2px solid #f93b4b;
+  margin-bottom: 0.5rem;
+  background: #fafafa;
+}
+.container .content .todo-container .todos .todo-text {
+  padding-bottom: 0.5rem;
+}
+.container .content .todo-container .todos .todo-due {
+  width: 100%;
+  border-top: 0.5px solid #475760;
+  background-color: #fafafa;
+  color: #475760;
+  padding-top: 0.5rem;
+}
+.container .content .todo-container .todos .todo-complete {
+  border-bottom: 2px solid #43c6ac;
+}
+.container .content .todo-container .todos .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -99,7 +200,26 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
 }
-.todo-container .todos .overlay.show {
+.container .content .todo-container .todos .overlay.show {
+  opacity: 1;
+}
+#messageModal {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5%;
+  opacity: 0;
+  padding: 1rem;
+  background-color: rgba(71, 87, 96, 0.8);
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  font-size: 1.3rem;
+  text-align: center;
+  z-index: 99;
+  color: #fafafa;
+  transition: all 0.15s ease-in;
+}
+#messageModal.show {
+  bottom: 5%;
   opacity: 1;
 }
 #things-that-work {
@@ -152,132 +272,12 @@
 .what-works.hide {
   display: none;
 }
-.controls {
-  display: flex;
-  flex-direction: column;
-}
-.controls .add-btn {
-  opacity: 1;
-  transition: all 0.15s ease-in;
-}
-.controls .add-btn i {
-  font-size: 1rem;
-  position: relative;
-  bottom: 0;
-  transition: all 0.15s ease-in;
-}
-.controls .add-btn:hover i {
-  bottom: 0.1rem;
-}
-.controls .add-btn.hide {
-  opacity: 0;
-}
-.controls .confirm-btn {
-  position: absolute;
-  top: -3rem;
-  right: 0.5rem;
-  transition: all 0.15s ease-in;
-  color: #43c6ac;
-}
-.controls .confirm-btn:hover i {
-  bottom: 0.1rem;
-}
-.controls .confirm-btn i {
-  font-size: 0.9rem;
-  position: relative;
-  bottom: 0;
-  transition: all 0.15s ease-in;
-}
-.controls .confirm-btn.show {
-  top: 0.7rem;
-}
 .btn {
   padding: 0.1rem 0.4rem;
   background-color: #fafafa;
   box-shadow: 0.5px 0.5px 3px 0px rgba(0, 0, 0, 0.75);
   color: #f93b4b;
   cursor: pointer;
-}
-.header {
-  display: flex;
-  width: 100%;
-  background-color: #f93b4b;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 1.2rem;
-  position: relative;
-  padding: 0.5rem;
-  height: 3rem;
-  overflow: hidden;
-}
-.header-text {
-  color: #fafafa;
-}
-.header-completed {
-  background-color: #43c6ac;
-}
-.todo {
-  display: flex;
-  flex-direction: column;
-  padding: 0.5rem;
-  position: relative;
-  transition: all 0.15s ease-in;
-  box-shadow: 0.5px 0.5px 3px 0px rgba(0, 0, 0, 0.75);
-  border-bottom: 2px solid #f93b4b;
-  margin-bottom: 0.5rem;
-  background: #fafafa;
-}
-.todo-text {
-  padding-bottom: 0.5rem;
-}
-.todo-due {
-  width: 100%;
-  border-top: 0.5px solid #475760;
-  background-color: #fafafa;
-  color: #475760;
-  padding-top: 0.5rem;
-}
-.todo-complete {
-  border-bottom: 2px solid #43c6ac;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: sans-serif;
-}
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-.container .content {
-  width: 60%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-#messageModal {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -5%;
-  opacity: 0;
-  padding: 1rem;
-  background-color: rgba(71, 87, 96, 0.8);
-  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
-  font-size: 1.3rem;
-  text-align: center;
-  z-index: 99;
-  color: #fafafa;
-  transition: all 0.15s ease-in;
-}
-#messageModal.show {
-  bottom: 5%;
-  opacity: 1;
 }
 #curve {
   position: absolute;

@@ -1,0 +1,48 @@
+@import "./colors.less";
+
+@greenShadow: 0px 1px 5px 0px @green;
+
+// search //
+.search {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin: 3% 0;
+  position: relative;
+
+  // border without radius, could have also transitioned the radius but meh
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 2px solid @green;
+  }
+
+  #search-input {
+    width: 100%;
+    padding: 0.7rem;
+    font-size: 1.2rem;
+    border-radius: 3px;
+    transition: all 0.25s ease-out;
+    border: none;
+
+    &:focus {
+      outline: none; // remove border when focused
+      box-shadow: @greenShadow;
+      border-bottom-color: white;
+
+      + i {
+        color: @green;
+      }
+    }
+  }
+
+  i {
+    position: absolute;
+    right: 1%;
+    cursor: pointer;
+    color: @grey;
+  }
+}

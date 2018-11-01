@@ -1,0 +1,60 @@
+@import "./colors.less";
+@import "./btn.less";
+
+.header {
+  display: flex;
+  width: 100%;
+  background-color: @orange;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  position: relative;
+  padding: 0.5rem;
+  overflow: hidden;
+
+  &-text {
+    color: white;
+  }
+
+  .controls {
+    display: flex;
+    flex-direction: column;
+
+    &-add {
+      i {
+        font-size: 1rem;
+        position: relative;
+        bottom: 0;
+        transition: all 0.15s ease-in;
+      }
+
+      &:hover i {
+        bottom: 0.1rem;
+      }
+    }
+
+    &-confirm {
+      position: absolute;
+      top: -3rem;
+      right: 0.5rem;
+      transition: all 0.15s ease-in;
+      color: @green;
+      border: 1px solid @green;
+
+      &:hover i {
+        bottom: 0.1rem;
+      }
+
+      i {
+        font-size: 0.9rem;
+        position: relative;
+        bottom: 0;
+        transition: all 0.15s ease-in;
+      }
+
+      &.show {
+        top: 0.5rem;
+      }
+    }
+  }
+}

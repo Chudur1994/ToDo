@@ -1,0 +1,52 @@
+@import "./colors.less";
+@import "./header.less";
+@import "./todo.less";
+
+.todo-container {
+  flex: 1;
+  position: relative;
+  margin: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 99;
+  height: 60vh;
+  box-shadow: @boxShadow;
+
+  .add {
+    transition: all 0.15s ease-in;
+    width: 100%;
+    position: relative;
+
+    #add-input {
+      position: absolute;
+      transition: all 0.15s ease-in;
+      left: 0;
+      top: 0;
+      height: 0;
+      font-size: 1.1rem;
+      width: 100%;
+      z-index: 99;
+      border: none;
+      border-right: 2px solid @orange;
+      border-left: 2px solid @orange;
+      border-bottom: 2px solid @orange;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &.show {
+      #add-input {
+        height: 3rem;
+        padding: 0.5rem;
+      }
+    }
+  }
+
+  .todos {
+    flex: 1;
+    padding: 0.35rem;
+    overflow-y: auto;
+  }
+}

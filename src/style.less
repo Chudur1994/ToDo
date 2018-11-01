@@ -1,8 +1,7 @@
-@green: #43c6ac;
-@yellow: #f8ffae;
-@orange: #f5811f;
-@grey: #999999;
-@boxShadow: 0px 2px 7px 2px rgba(150, 150, 150, 1);
+@import "./colors.less";
+@import "./search.less";
+@import "./todo-container.less";
+@import "./working.less";
 
 * {
   margin: 0;
@@ -11,108 +10,48 @@
 }
 
 .container {
-  width: 100%;
-  height: 100vh;
-  position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 
-  #todo-container {
+  // content //
+  .content {
+    width: 60%;
     display: flex;
-    flex-direction: column;
-    margin-top: 2rem;
-
-    #search-container {
-      width: 100%;
-
-      #search {
-        width: 100%;
-        padding: 8px;
-        padding-left: 12px;
-        border: 1px solid lighten(@grey, 10%);
-        border-radius: 15px;
-        outline: initial;
-        font-size: 1.1rem;
-        transition: all 0.3s ease-out;
-
-        &:focus {
-          border-color: @green;
-          box-shadow: @boxShadow;
-        }
-      }
-    }
-
-    > section {
-      display: flex;
-      height: 100vh;
-      width: 100%;
-      justify-content: space-between;
-      align-items: center;
-
-      .incomplete-add {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        position: relative;
-        padding-bottom: 1rem;
-
-        #add {
-          width: 100%;
-          border-bottom: 1.5px solid @grey;
-          transition: all 0.2s ease-out;
-        }
-
-        #add:focus {
-          border-bottom: 1.5px solid @orange;
-          &:focus + i {
-            color: @orange;
-            cursor: pointer;
-            transform: rotate(180deg);
-          }
-        }
-
-        i {
-          position: absolute;
-          right: 5px;
-          color: @grey;
-          transition: all 0.3s ease-out;
-        }
-      }
-
-      #incomplete-container {
-        margin-right: 5rem;
-      }
-
-      .page {
-        box-shadow: @boxShadow;
-        flex: 1;
-        z-index: 1;
-        height: 90%;
-        max-width: 40rem;
-        padding: 1rem;
-        border-bottom: 2px solid @grey;
-      }
-    }
-  }
-
-  #curve {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-
-    path {
-      fill: url(#MyGradient);
-    }
+    align-items: flex-start;
+    justify-content: space-between;
   }
 }
 
-.base-input {
-  padding: 5px;
-  outline: none;
-  border: none;
-  font-size: 0.9rem;
-}
-
-.i-icon {
+#messageModal {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5%;
+  opacity: 0;
+  padding: 1rem;
+  background-color: fade(@grey, 80%);
+  box-shadow: @boxShadow;
+  font-size: 1.3rem;
   text-align: center;
+  z-index: 99;
+  color: white;
+  transition: all 0.15s ease-in;
+
+  &.show {
+    bottom: 5%;
+    opacity: 1;
+  }
+}
+
+#curve {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  path {
+    fill: url(#MyGradient);
+  }
 }

@@ -1,0 +1,54 @@
+.btn {
+  padding: 0.1rem 0.4rem;
+  border-radius: 2px;
+  background-color: #fff;
+  color: #f5811f;
+  cursor: pointer;
+}
+.header {
+  display: flex;
+  width: 100%;
+  background-color: #f5811f;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  position: relative;
+  padding: 0.5rem;
+  overflow: hidden;
+}
+.header-text {
+  color: white;
+}
+.header .controls {
+  display: flex;
+  flex-direction: column;
+}
+.header .controls-add i {
+  font-size: 1rem;
+  position: relative;
+  bottom: 0;
+  transition: all 0.15s ease-in;
+}
+.header .controls-add:hover i {
+  bottom: 0.1rem;
+}
+.header .controls-confirm {
+  position: absolute;
+  top: -3rem;
+  right: 0.5rem;
+  transition: all 0.15s ease-in;
+  color: #43c6ac;
+  border: 1px solid #43c6ac;
+}
+.header .controls-confirm:hover i {
+  bottom: 0.1rem;
+}
+.header .controls-confirm i {
+  font-size: 0.9rem;
+  position: relative;
+  bottom: 0;
+  transition: all 0.15s ease-in;
+}
+.header .controls-confirm.show {
+  top: 0.5rem;
+}

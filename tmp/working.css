@@ -1,0 +1,48 @@
+#things-that-work {
+  position: fixed;
+  top: 15%;
+  left: 7%;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  background: rgba(100, 100, 100, 0.7);
+  color: #e6e6e6;
+  padding: 1.25rem;
+  border-bottom: 1px solid black;
+  display: none;
+}
+#things-that-work .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.5rem;
+  background-color: #fff;
+  color: black;
+  width: 2rem;
+  cursor: pointer;
+  text-align: center;
+}
+#things-that-work h3 {
+  background-color: rgba(20, 20, 20, 0.8);
+  padding: 0.5rem;
+}
+#things-that-work li {
+  padding: 0.3rem;
+  font-size: 1rem;
+}
+#things-that-work.show {
+  display: block;
+}
+.what-works {
+  position: fixed;
+  top: 15%;
+  left: 7%;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #dcdcdc;
+  cursor: pointer;
+  border-bottom: 1px solid black;
+  display: block;
+}
+.what-works.hide {
+  display: none;
+}

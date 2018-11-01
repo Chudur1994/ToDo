@@ -1,0 +1,22 @@
+.todo {
+  display: flex;
+  padding: 0.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.5px solid #999999;
+  position: relative;
+  transition: all 0.15s ease-in;
+}
+.todo:last-of-type {
+  border: none;
+}
+.todo-number {
+  margin-right: 0.5rem;
+}
+.todo-timeStamp {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: #f5811f;
+  color: white;
+  padding: 0.05rem;
+}

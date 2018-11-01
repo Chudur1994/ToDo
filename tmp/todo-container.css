@@ -1,0 +1,117 @@
+.btn {
+  padding: 0.1rem 0.4rem;
+  border-radius: 2px;
+  background-color: #fff;
+  color: #f5811f;
+  cursor: pointer;
+}
+.header {
+  display: flex;
+  width: 100%;
+  background-color: #f5811f;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  position: relative;
+  padding: 0.5rem;
+  overflow: hidden;
+}
+.header-text {
+  color: white;
+}
+.header .controls {
+  display: flex;
+  flex-direction: column;
+}
+.header .controls-add i {
+  font-size: 1rem;
+  position: relative;
+  bottom: 0;
+  transition: all 0.15s ease-in;
+}
+.header .controls-add:hover i {
+  bottom: 0.1rem;
+}
+.header .controls-confirm {
+  position: absolute;
+  top: -3rem;
+  right: 0.5rem;
+  transition: all 0.15s ease-in;
+  color: #43c6ac;
+  border: 1px solid #43c6ac;
+}
+.header .controls-confirm:hover i {
+  bottom: 0.1rem;
+}
+.header .controls-confirm i {
+  font-size: 0.9rem;
+  position: relative;
+  bottom: 0;
+  transition: all 0.15s ease-in;
+}
+.header .controls-confirm.show {
+  top: 0.5rem;
+}
+.todo {
+  display: flex;
+  padding: 0.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.5px solid #999999;
+  position: relative;
+  transition: all 0.15s ease-in;
+}
+.todo:last-of-type {
+  border: none;
+}
+.todo-number {
+  margin-right: 0.5rem;
+}
+.todo-timeStamp {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: #f5811f;
+  color: white;
+  padding: 0.05rem;
+}
+.todo-container {
+  flex: 1;
+  position: relative;
+  margin: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 99;
+  height: 60vh;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.todo-container .add {
+  transition: all 0.15s ease-in;
+  width: 100%;
+  position: relative;
+}
+.todo-container .add #add-input {
+  position: absolute;
+  transition: all 0.15s ease-in;
+  left: 0;
+  top: 0;
+  height: 0;
+  font-size: 1.1rem;
+  width: 100%;
+  z-index: 99;
+  border: none;
+  border-right: 2px solid #f5811f;
+  border-left: 2px solid #f5811f;
+  border-bottom: 2px solid #f5811f;
+}
+.todo-container .add #add-input:focus {
+  outline: none;
+}
+.todo-container .add.show #add-input {
+  height: 3rem;
+  padding: 0.5rem;
+}
+.todo-container .todos {
+  flex: 1;
+  padding: 0.35rem;
+  overflow-y: auto;
+}

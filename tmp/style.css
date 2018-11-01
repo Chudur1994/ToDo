@@ -1,96 +1,247 @@
+.search {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin: 3% 0;
+  position: relative;
+}
+.search:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid #43c6ac;
+}
+.search #search-input {
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 1.2rem;
+  border-radius: 3px;
+  transition: all 0.25s ease-out;
+  border: none;
+}
+.search #search-input:focus {
+  outline: none;
+  box-shadow: 0px 1px 5px 0px #43c6ac;
+  border-bottom-color: white;
+}
+.search #search-input:focus + i {
+  color: #43c6ac;
+}
+.search i {
+  position: absolute;
+  right: 1%;
+  cursor: pointer;
+  color: #999999;
+}
+.btn {
+  padding: 0.1rem 0.4rem;
+  border-radius: 2px;
+  background-color: #fff;
+  color: #f5811f;
+  cursor: pointer;
+}
+.header {
+  display: flex;
+  width: 100%;
+  background-color: #f5811f;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  position: relative;
+  padding: 0.5rem;
+  overflow: hidden;
+}
+.header-text {
+  color: white;
+}
+.header .controls {
+  display: flex;
+  flex-direction: column;
+}
+.header .controls-add i {
+  font-size: 1rem;
+  position: relative;
+  bottom: 0;
+  transition: all 0.15s ease-in;
+}
+.header .controls-add:hover i {
+  bottom: 0.1rem;
+}
+.header .controls-confirm {
+  position: absolute;
+  top: -3rem;
+  right: 0.5rem;
+  transition: all 0.15s ease-in;
+  color: #43c6ac;
+  border: 1px solid #43c6ac;
+}
+.header .controls-confirm:hover i {
+  bottom: 0.1rem;
+}
+.header .controls-confirm i {
+  font-size: 0.9rem;
+  position: relative;
+  bottom: 0;
+  transition: all 0.15s ease-in;
+}
+.header .controls-confirm.show {
+  top: 0.5rem;
+}
+.todo {
+  display: flex;
+  padding: 0.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.5px solid #999999;
+  position: relative;
+  transition: all 0.15s ease-in;
+}
+.todo:last-of-type {
+  border: none;
+}
+.todo-number {
+  margin-right: 0.5rem;
+}
+.todo-timeStamp {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: #f5811f;
+  color: white;
+  padding: 0.05rem;
+}
+.todo-container {
+  flex: 1;
+  position: relative;
+  margin: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 99;
+  height: 60vh;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.todo-container .add {
+  transition: all 0.15s ease-in;
+  width: 100%;
+  position: relative;
+}
+.todo-container .add #add-input {
+  position: absolute;
+  transition: all 0.15s ease-in;
+  left: 0;
+  top: 0;
+  height: 0;
+  font-size: 1.1rem;
+  width: 100%;
+  z-index: 99;
+  border: none;
+  border-right: 2px solid #f5811f;
+  border-left: 2px solid #f5811f;
+  border-bottom: 2px solid #f5811f;
+}
+.todo-container .add #add-input:focus {
+  outline: none;
+}
+.todo-container .add.show #add-input {
+  height: 3rem;
+  padding: 0.5rem;
+}
+.todo-container .todos {
+  flex: 1;
+  padding: 0.35rem;
+  overflow-y: auto;
+}
+#things-that-work {
+  position: fixed;
+  top: 15%;
+  left: 7%;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  background: rgba(100, 100, 100, 0.7);
+  color: #e6e6e6;
+  padding: 1.25rem;
+  border-bottom: 1px solid black;
+  display: none;
+}
+#things-that-work .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.5rem;
+  background-color: #fff;
+  color: black;
+  width: 2rem;
+  cursor: pointer;
+  text-align: center;
+}
+#things-that-work h3 {
+  background-color: rgba(20, 20, 20, 0.8);
+  padding: 0.5rem;
+}
+#things-that-work li {
+  padding: 0.3rem;
+  font-size: 1rem;
+}
+#things-that-work.show {
+  display: block;
+}
+.what-works {
+  position: fixed;
+  top: 15%;
+  left: 7%;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #dcdcdc;
+  cursor: pointer;
+  border-bottom: 1px solid black;
+  display: block;
+}
+.what-works.hide {
+  display: none;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 .container {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-.container #todo-container {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
+  justify-content: space-around;
+  align-items: center;
 }
-.container #todo-container #search-container {
-  width: 100%;
-}
-.container #todo-container #search-container #search {
-  width: 100%;
-  padding: 8px;
-  padding-left: 12px;
-  border: 1px solid #b3b3b3;
-  border-radius: 15px;
-  outline: initial;
-  font-size: 1.1rem;
-  transition: all 0.3s ease-out;
-}
-.container #todo-container #search-container #search:focus {
-  border-color: #43c6ac;
-  box-shadow: 0px 2px 7px 2px #969696;
-}
-.container #todo-container > section {
+.container .content {
+  width: 60%;
   display: flex;
-  height: 100vh;
-  width: 100%;
+  align-items: flex-start;
   justify-content: space-between;
-  align-items: center;
 }
-.container #todo-container > section .incomplete-add {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  position: relative;
-  padding-bottom: 1rem;
-}
-.container #todo-container > section .incomplete-add #add {
-  width: 100%;
-  border-bottom: 1.5px solid #999999;
-  transition: all 0.2s ease-out;
-}
-.container #todo-container > section .incomplete-add #add:focus {
-  border-bottom: 1.5px solid #f5811f;
-}
-.container #todo-container > section .incomplete-add #add:focus:focus + i {
-  color: #f5811f;
-  cursor: pointer;
-  transform: rotate(180deg);
-}
-.container #todo-container > section .incomplete-add i {
-  position: absolute;
-  right: 5px;
-  color: #999999;
-  transition: all 0.3s ease-out;
-}
-.container #todo-container > section #incomplete-container {
-  margin-right: 5rem;
-}
-.container #todo-container > section .page {
-  box-shadow: 0px 2px 7px 2px #969696;
-  flex: 1;
-  z-index: 1;
-  height: 90%;
-  max-width: 40rem;
+#messageModal {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5%;
+  opacity: 0;
   padding: 1rem;
-  border-bottom: 2px solid #999999;
+  background-color: rgba(153, 153, 153, 0.8);
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  font-size: 1.3rem;
+  text-align: center;
+  z-index: 99;
+  color: white;
+  transition: all 0.15s ease-in;
 }
-.container #curve {
+#messageModal.show {
+  bottom: 5%;
+  opacity: 1;
+}
+#curve {
   position: absolute;
   bottom: 0;
+  left: 0;
   width: 100%;
 }
-.container #curve path {
+#curve path {
   fill: url(#MyGradient);
-}
-.base-input {
-  padding: 5px;
-  outline: none;
-  border: none;
-  font-size: 0.9rem;
-}
-.i-icon {
-  text-align: center;
 }

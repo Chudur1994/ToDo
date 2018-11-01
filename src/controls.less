@@ -1,0 +1,49 @@
+@import "./colors.less";
+
+.controls {
+  display: flex;
+  flex-direction: column;
+
+  .add-btn {
+    opacity: 1;
+    transition: all 0.15s ease-in;
+
+    i {
+      font-size: 1rem;
+      position: relative;
+      bottom: 0;
+      transition: all 0.15s ease-in;
+    }
+
+    &:hover i {
+      bottom: 0.1rem;
+    }
+
+    &.hide {
+      opacity: 0;
+    }
+  }
+
+  .confirm-btn {
+    position: absolute;
+    top: -3rem;
+    right: 0.5rem;
+    transition: all 0.15s ease-in;
+    color: @green;
+
+    &:hover i {
+      bottom: 0.1rem;
+    }
+
+    i {
+      font-size: 0.9rem;
+      position: relative;
+      bottom: 0;
+      transition: all 0.15s ease-in;
+    }
+
+    &.show {
+      top: 0.7rem;
+    }
+  }
+}

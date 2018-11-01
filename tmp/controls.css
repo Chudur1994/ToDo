@@ -1,0 +1,39 @@
+.controls {
+  display: flex;
+  flex-direction: column;
+}
+.controls .add-btn {
+  opacity: 1;
+  transition: all 0.15s ease-in;
+}
+.controls .add-btn i {
+  font-size: 1rem;
+  position: relative;
+  bottom: 0;
+  transition: all 0.15s ease-in;
+}
+.controls .add-btn:hover i {
+  bottom: 0.1rem;
+}
+.controls .add-btn.hide {
+  opacity: 0;
+}
+.controls .confirm-btn {
+  position: absolute;
+  top: -3rem;
+  right: 0.5rem;
+  transition: all 0.15s ease-in;
+  color: #43c6ac;
+}
+.controls .confirm-btn:hover i {
+  bottom: 0.1rem;
+}
+.controls .confirm-btn i {
+  font-size: 0.9rem;
+  position: relative;
+  bottom: 0;
+  transition: all 0.15s ease-in;
+}
+.controls .confirm-btn.show {
+  top: 0.7rem;
+}

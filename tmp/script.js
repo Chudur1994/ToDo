@@ -1,8 +1,8 @@
 "use strict";
 
-var openAddBtn = document.querySelector(".controls-add");
+var openAddBtn = document.querySelector(".add-btn");
 var addContainer = document.querySelector(".add");
-var confirmAdd = document.querySelector(".controls-confirm");
+var confirmAdd = document.querySelector(".confirm-btn");
 var addInput = document.querySelector("#add-input");
 var addSettings = document.querySelector(".add-settings");
 var dueDateLabel = document.querySelector(".add-settings label");
@@ -88,16 +88,12 @@ function inputIsValid() {
 function makeTodoEl() {
   var todo = document.createElement("div");
   todo.classList.add("todo");
-  var number = document.createElement("p");
-  number.classList.add("todo-number");
-  number.textContent = "".concat(todos.length + 1, ".");
   var text = document.createElement("p");
   text.classList.add("todo-text");
   text.textContent = lastAddedTodo.text;
   var timeStamp = document.createElement("p");
-  timeStamp.classList.add("todo-timeStamp");
+  timeStamp.classList.add("todo-due");
   timeStamp.textContent = lastAddedTodo.timeStamp;
-  todo.appendChild(number);
   todo.appendChild(text);
   todo.appendChild(timeStamp);
   return todo;

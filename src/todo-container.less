@@ -1,6 +1,4 @@
 @import "./colors.less";
-@import "./header.less";
-@import "./todo.less";
 
 .todo-container {
   flex: 1;
@@ -21,17 +19,16 @@
     z-index: 99;
     overflow: hidden;
     height: 0;
-    border-bottom: 2px solid @grey;
 
+    // input for adding todos, hidden by default
     #add-input {
       transition: all 0.15s ease-in;
       font-size: 1.1rem;
       width: 100%;
       border: none;
       padding: 0.5rem;
-      border-right: 2px solid @red;
-      border-left: 2px solid @red;
-      border-bottom: 2px solid @red;
+      border-right: 0.5rem solid @red;
+      border-left: 0.5rem solid @red;
 
       &:focus {
         outline: none;

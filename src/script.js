@@ -1,6 +1,6 @@
-const openAddBtn = document.querySelector(".controls-add");
+const openAddBtn = document.querySelector(".add-btn");
 const addContainer = document.querySelector(".add");
-const confirmAdd = document.querySelector(".controls-confirm");
+const confirmAdd = document.querySelector(".confirm-btn");
 const addInput = document.querySelector("#add-input");
 const addSettings = document.querySelector(".add-settings");
 const dueDateLabel = document.querySelector(".add-settings label");
@@ -97,19 +97,14 @@ function makeTodoEl() {
   const todo = document.createElement("div");
   todo.classList.add("todo");
 
-  const number = document.createElement("p");
-  number.classList.add("todo-number");
-  number.textContent = `${todos.length + 1}.`;
-
   const text = document.createElement("p");
   text.classList.add("todo-text");
   text.textContent = lastAddedTodo.text;
 
   const timeStamp = document.createElement("p");
-  timeStamp.classList.add("todo-timeStamp");
+  timeStamp.classList.add("todo-due");
   timeStamp.textContent = lastAddedTodo.timeStamp;
 
-  todo.appendChild(number);
   todo.appendChild(text);
   todo.appendChild(timeStamp);
 

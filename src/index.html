@@ -30,13 +30,15 @@
                     <p class="header-text">Welcome :)</p>
                     <!-- open the add todo prompt -->
                     <div class="controls">
-                        <a class="controls-add btn"><i class="fas fa-plus"></i> Add</a>
-                        <a class="controls-confirm btn"><i class="fas fa-check"></i> Confirm</a>
+                        <div class="controls-add-confirm">
+                            <a class="add-btn btn"><i class="fas fa-plus"></i> Add</a>
+                            <a class="confirm-btn btn"><i class="fas fa-check"></i> Confirm</a>
+                        </div>
                     </div>
                 </div>
                 <!-- add todo prompt -->
                 <div class="add">
-                    <input type="text" name="todo" id="add-input">
+                    <input type="text" name="todo" id="add-input" placeholder="Add a todo...">
                     <div class="add-settings">
                         <label for="due-date">Due Date</label>
                         <input type="date" name="due-date" id="due-date">
@@ -46,35 +48,34 @@
                 <div class="todos">
                     <div class="overlay"></div>
                     <div class="todo">
-                        <p class="todo-number">1.</p>
                         <p class="todo-text">Lorem Lorem ipsum dolor sit amet. ipsum dolor, sit amet consectetur
                             adipisicing elit. Fugit, sit.</p>
-                        <p class="todo-timeStamp">Just now</p>
+                        <p class="todo-due">Due <span>11/1/18 @ 8pm</span></p>
                     </div>
                     <div class="todo">
-                        <p class="todo-number">2.</p>
                         <p class="todo-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, sit.</p>
                     </div>
                     <div class="todo">
-                        <p class="todo-number">3.</p>
                         <p class="todo-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, sit.</p>
                     </div>
                 </div>
             </div>
 
             <!-- completed todos -->
-            <div class="todo-container completed">
-                <div class="header">
+            <div class="todo-container todo-container-completed">
+                <div class="header header-completed">
                     <p class="header-text">Completed To-Do</p>
                     <a class="header-sort-btn">Sort</a>
+                    <div class="header-sort-options">
+                        <p><i class="fas fa-arrows-alt-v"></i> Date Completed</p>
+                        <p><i class="fas fa-arrows-alt-v"></i> Time to Complete</p>
+                    </div>
                 </div>
                 <div class="todos">
-                    <div class="todo">
-                        <p class="todo-number">1.</p>
+                    <div class="todo todo-complete">
                         <p class="todo-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, sit.</p>
                     </div>
-                    <div class="todo">
-                        <p class="todo-number">2.</p>
+                    <div class="todo todo-complete">
                         <p class="todo-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, sit.</p>
                     </div>
                 </div>

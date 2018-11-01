@@ -1,0 +1,8 @@
+.btn {
+  padding: 0.1rem 0.4rem;
+  background-color: #fafafa;
+  box-shadow: 0.5px 0.5px 3px 0px rgba(0, 0, 0, 0.75);
+  font-size: 1rem;
+  color: #f93b4b;
+  cursor: pointer;
+}

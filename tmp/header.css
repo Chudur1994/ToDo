@@ -1,0 +1,61 @@
+.header {
+  display: flex;
+  width: 100%;
+  background-color: #f93b4b;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  position: relative;
+  padding: 0.5rem;
+  height: 3rem;
+  z-index: 10;
+  overflow: hidden;
+}
+.header .controls {
+  display: flex;
+}
+.header .controls-add-confirm .add-btn {
+  opacity: 1;
+  transition: all 0.15s ease-in;
+}
+.header .controls-add-confirm .add-btn i {
+  font-size: 1rem;
+  position: relative;
+  bottom: 0;
+  transition: all 0.15s ease-in;
+}
+.header .controls-add-confirm .add-btn:hover i {
+  bottom: 0.1rem;
+}
+.header .controls-add-confirm .add-btn.hide {
+  opacity: 0;
+}
+.header .controls-add-confirm .confirm-btn {
+  position: absolute;
+  top: -3rem;
+  right: 0.5rem;
+  transition: all 0.15s ease-in;
+  color: #43c6ac;
+}
+.header .controls-add-confirm .confirm-btn:hover i {
+  bottom: 0.1rem;
+}
+.header .controls-add-confirm .confirm-btn i {
+  font-size: 0.9rem;
+  position: relative;
+  bottom: 0;
+  transition: all 0.15s ease-in;
+}
+.header .controls-add-confirm .confirm-btn.show {
+  top: 0.7rem;
+}
+.header .controls .sort-btn {
+  color: #3bb8f9;
+}
+.header-text {
+  color: #fafafa;
+}
+.header-completed {
+  background-color: #43c6ac;
+  overflow: initial;
+}

@@ -173,6 +173,21 @@
   flex: 1;
   padding: 1rem;
   overflow-y: auto;
+  position: relative;
+}
+.todo-container .todos .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  transition: all 0.15s ease-in;
+  opacity: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.todo-container .todos .overlay.show {
+  opacity: 1;
 }
 #things-that-work {
   z-index: 99;

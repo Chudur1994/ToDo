@@ -5,6 +5,7 @@ var addContainer = document.querySelector(".add");
 var confirmAdd = document.querySelector(".controls-confirm");
 var addInput = document.querySelector("#add-input");
 var addSettings = document.querySelector(".add-settings");
+var todosOverlay = document.querySelector(".todos .overlay");
 var messageModal = document.querySelector("#messageModal");
 var todoContainer = document.querySelector(".todos");
 var todos = document.querySelectorAll(".todo");
@@ -17,7 +18,8 @@ openAddBtn.addEventListener("click", function (e) {
   e.preventDefault();
   addContainer.classList.add("show");
   confirmAdd.classList.add("show");
-  this.classList.add("hide"); // give focus to input
+  this.classList.add("hide");
+  todosOverlay.classList.add("show"); // give focus to input
 
   addInput.focus();
 }); // add the todo to list and close input prompt
@@ -39,6 +41,7 @@ window.addEventListener("click", function (e) {
   e.target !== openAddBtn && e.target !== confirmAdd) {
     addContainer.classList.remove("show");
     confirmAdd.classList.remove("show");
+    todosOverlay.classList.remove("show");
     openAddBtn.classList.remove("hide");
   }
 });
@@ -59,6 +62,7 @@ function addTodo() {
   lastAddedTodo.timeStamp = new Date().toLocaleString();
   addContainer.classList.remove("show");
   confirmAdd.classList.remove("show");
+  todosOverlay.classList.remove("show");
   openAddBtn.classList.remove("hide");
   todoContainer.appendChild(makeTodoEl());
 }

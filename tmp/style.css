@@ -160,6 +160,7 @@
   overflow-y: auto;
 }
 #things-that-work {
+  z-index: 99;
   position: fixed;
   top: 15%;
   left: 7%;
@@ -193,6 +194,7 @@
   display: block;
 }
 .what-works {
+  z-index: 99;
   position: fixed;
   top: 15%;
   left: 7%;

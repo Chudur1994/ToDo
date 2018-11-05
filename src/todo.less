@@ -5,11 +5,18 @@
   flex-direction: column;
   padding: 0.5rem;
   position: relative;
-  transition: all 0.15s ease-in;
+  transition: all 0.15s;
   box-shadow: @smallShadow;
   border-bottom: 2px solid @red;
   margin-bottom: 0.5rem;
   background: @white;
+  cursor: pointer;
+
+  &.selected {
+    box-shadow: @boxShadow;
+    border-left: 6px solid @red;
+    cursor: initial;
+  }
 
   &-text {
     padding-bottom: 0.5rem;
@@ -22,6 +29,39 @@
     color: @grey;
     font-size: 0.8rem;
     padding-top: 0.5rem;
+  }
+
+  .controls {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    visibility: hidden;
+    transition: all 0.15s;
+    opacity: 0;
+
+    &.show {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .delete-todo {
+      border: 1px solid white;
+      margin-left: 0.25rem;
+      color: white;
+      border-radius: 3px;
+      padding: 0.2rem 0.5rem;
+      cursor: pointer;
+    }
+
+    .edit-todo {
+      border: 1px solid @blue;
+      color: @blue;
+      border-radius: 3px;
+      padding: 0.2rem 0.5rem;
+      cursor: pointer;
+    }
   }
 }
 

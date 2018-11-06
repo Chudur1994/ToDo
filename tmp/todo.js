@@ -59,11 +59,11 @@ function () {
         return todo.id === id;
       });
 
-      if (!todoToRemoveIndex) {
+      if (todoToRemoveIndex === -1) {
         // id not found in array of todos
         return false;
       } else {
-        return todosArray.splice(todoToRemoveIndex, 1); // remove it
+        todosArray.splice(todoToRemoveIndex, 1); // remove it
       }
     }
   }, {

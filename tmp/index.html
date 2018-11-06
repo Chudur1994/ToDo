@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="todo-container.css">
     <link rel="stylesheet" href="todo.css">
+    <link rel="stylesheet" href="todoDetails.css">
     <!-- endinject -->
     <!--[/htmlclean-protect]-->
     <title>Document</title>
@@ -79,6 +80,14 @@
                 </div>
             </div>
         </section>
+
+        <div id="todo-details">
+            <span class="close"><i class="fas fa-times"></i></span>
+            <h3 class="header">Edit</h3>
+            <textarea name="todo-text" cols="30" rows="10"></textarea>
+            <input type="date" name="due-date" id="due-date">
+            <span class="submit">Submit</span>
+        </div>
     </div>
 
     <div id="messageModal">Hello World :)</div>

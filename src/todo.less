@@ -5,7 +5,7 @@
   flex-direction: column;
   padding: 0.5rem;
   position: relative;
-  transition: all 0.15s;
+  transition: all 0.25s;
   box-shadow: @smallShadow;
   border-bottom: 2px solid @red;
   margin-bottom: 0.5rem;
@@ -14,6 +14,7 @@
 
   &.selected {
     box-shadow: @boxShadow;
+    border-bottom: 2px solid @red;
     border-left: 6px solid @red;
     cursor: initial;
   }
@@ -38,7 +39,7 @@
     transform: translate(-50%, -50%);
     z-index: 2;
     visibility: hidden;
-    transition: all 0.15s;
+    transition: all 0.25s;
     opacity: 0;
 
     &.show {
@@ -52,7 +53,14 @@
       color: white;
       border-radius: 3px;
       padding: 0.2rem 0.5rem;
+      transition: all 0.25s;
       cursor: pointer;
+
+      &:hover {
+        background: white;
+        color: @grey;
+        box-shadow: @smallShadow;
+      }
     }
 
     .edit-todo {
@@ -60,7 +68,14 @@
       color: @blue;
       border-radius: 3px;
       padding: 0.2rem 0.5rem;
+      transition: all 0.25s;
       cursor: pointer;
+
+      &:hover {
+        background: @blue;
+        color: white;
+        box-shadow: @smallShadow;
+      }
     }
   }
 }

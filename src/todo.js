@@ -43,12 +43,14 @@ class Todo {
 
   static removeTodo(id) {
     // find index of todo to remove
-    const todoToRemoveIndex = todosArray.findIndex(todo => todo.id === id);
-    if (!todoToRemoveIndex) {
+    const todoToRemoveIndex = todosArray.findIndex(todo => {
+      return todo.id === id;
+    });
+    if (todoToRemoveIndex === -1) {
       // id not found in array of todos
       return false;
     } else {
-      return todosArray.splice(todoToRemoveIndex, 1); // remove it
+      todosArray.splice(todoToRemoveIndex, 1); // remove it
     }
   }
 

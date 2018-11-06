@@ -178,7 +178,29 @@ function makeTodoEl(todoObj) {
     e.preventDefault();
     todoMouseLeaveHandler(this);
   });
+  editBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    editHandler(todoObj);
+  });
+  deleteBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    deleteHandler(todoObj);
+  });
   return todo;
+}
+
+function deleteHandler(todoObj) {
+  Todo.removeTodo(todoObj.id); // for now just recreate the list of todos
+
+  todoContainer.innerHTML = "";
+  var allTodos = Todo.getAllTodos();
+  allTodos.forEach(function (todoObj) {
+    todoContainer.appendChild(makeTodoEl(todoObj));
+  });
+}
+
+function editHandler(todoObj) {
+  console.log(todoObj);
 }
 
 function todoClickHandler(todoEl) {

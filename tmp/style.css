@@ -56,7 +56,7 @@ body {
   justify-content: space-between;
 }
 .container .content .todo-container {
-  flex: 1;
+  flex: 1 0 50%;
   position: relative;
   margin: 0 0.5rem;
   display: flex;
@@ -174,7 +174,7 @@ body {
   flex-direction: column;
   padding: 0.5rem;
   position: relative;
-  transition: all 0.15s;
+  transition: all 0.25s;
   box-shadow: 0.5px 0.5px 3px 0px rgba(0, 0, 0, 0.75);
   border-bottom: 2px solid #f93b4b;
   margin-bottom: 0.5rem;
@@ -183,6 +183,7 @@ body {
 }
 .container .content .todo-container .todos .todo.selected {
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  border-bottom: 2px solid #f93b4b;
   border-left: 6px solid #f93b4b;
   cursor: initial;
 }
@@ -204,7 +205,7 @@ body {
   transform: translate(-50%, -50%);
   z-index: 2;
   visibility: hidden;
-  transition: all 0.15s;
+  transition: all 0.25s;
   opacity: 0;
 }
 .container .content .todo-container .todos .todo .controls.show {
@@ -217,14 +218,26 @@ body {
   color: white;
   border-radius: 3px;
   padding: 0.2rem 0.5rem;
+  transition: all 0.25s;
   cursor: pointer;
+}
+.container .content .todo-container .todos .todo .controls .delete-todo:hover {
+  background: white;
+  color: #475760;
+  box-shadow: 0.5px 0.5px 3px 0px rgba(0, 0, 0, 0.75);
 }
 .container .content .todo-container .todos .todo .controls .edit-todo {
   border: 1px solid #3bb8f9;
   color: #3bb8f9;
   border-radius: 3px;
   padding: 0.2rem 0.5rem;
+  transition: all 0.25s;
   cursor: pointer;
+}
+.container .content .todo-container .todos .todo .controls .edit-todo:hover {
+  background: #3bb8f9;
+  color: white;
+  box-shadow: 0.5px 0.5px 3px 0px rgba(0, 0, 0, 0.75);
 }
 .container .content .todo-container .todos .todo-complete {
   border-bottom: 2px solid #43c6ac;
@@ -263,7 +276,7 @@ body {
   left: 0;
   width: 100%;
   visibility: hidden;
-  transition: all 0.15s;
+  transition: all 0.25s;
   opacity: 0;
   height: 100%;
   background-color: rgba(25, 25, 25, 0.6);
@@ -272,6 +285,31 @@ body {
   visibility: visible;
   opacity: 1;
   z-index: 1;
+}
+.container #todo-details {
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+.container #todo-details::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+.container #todo-details textarea {
+  margin: 1rem;
+}
+.container #todo-details input {
+  margin: 1rem;
 }
 #messageModal {
   position: fixed;
